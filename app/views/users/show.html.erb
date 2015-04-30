@@ -1,7 +1,7 @@
 <div class="jumbotron">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-4">
+      <div class="col-xs-0 col-sm-4 col-md-4 col-lg-4">
         <%= gravatar_tag @user.email, size: 200 %>
       </div>
       <div class="col-sm-4 col-md-4 col-lg-4">
@@ -34,8 +34,9 @@
       </div>
     </div>
     <!-- Post Zone -->
-    <div class="ol-sm-6 col-md-6 col-lg-6">
-
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <%= render 'posts/form' %>
+        <%= render @posts %>
     </div>
     <!-- Profile Activity -->
     <div class="col-sm-3 col-md-3 col-lg-3">
