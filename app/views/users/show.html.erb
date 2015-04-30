@@ -16,3 +16,37 @@
     </div>
   </div>
 </div>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Friend Zone -->
+    <div class="col-sm-3 col-md-3 col-lg-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Friends (<%= @user.active_friends.size %>)
+        </div>
+        <div class="panel-body">
+          <% @user.active_friends.last(16).each do |user| %>
+              <%= link_to user_path(user.username) do %>
+                  <%= gravatar_tag user.email, size: 40 %>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <!-- Post Zone -->
+    <div class="ol-sm-6 col-md-6 col-lg-6">
+
+    </div>
+    <!-- Profile Activity -->
+    <div class="col-sm-3 col-md-3 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              Recent Activity
+            </div>
+        	<div class="panel-body">
+        	   <%= render_activities(@activities) %>
+        	</div>
+        </div>
+    </div>
+  </div>
+</div>
