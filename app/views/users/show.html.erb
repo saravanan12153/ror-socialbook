@@ -35,19 +35,21 @@
     </div>
     <!-- Post Zone -->
     <div class="col-sm-6 col-md-6 col-lg-6">
-        <%= render 'posts/form' %>
-        <%= render @posts %>
+      <% if current_user && current_user == @user %>
+          <%= render 'posts/form' %>
+      <% end %>
+      <%= render @posts %>
     </div>
     <!-- Profile Activity -->
     <div class="col-sm-3 col-md-3 col-lg-3">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-              Recent Activity
-            </div>
-        	<div class="panel-body">
-        	   <%= render_activities(@activities) %>
-        	</div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Recent Activity
         </div>
+        <div class="panel-body">
+          <%= render_activities(@activities) %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
